@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme {
+  --color-lilac-deep: #3a2d4c;
+  --color-lilac-bg: #4f4366;
+  --color-lilac-card: #5e4e75;
+  --color-lilac-light: #6e5f86;
+  --color-rose-default: #9a6f92;
+  --color-coral-default: #f4a8a2;
+  --color-coral-warm: #ea8571;
+  --color-peach-default: #ffd2b8;
+
+  --font-sans: "Fraunces", "Playfair Display", "Iowan Old Style", Georgia, serif;
+  --font-serif: "Fraunces", "Playfair Display", "Iowan Old Style", Georgia, serif;
+}
+
+@layer utilities {
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  .transform-style-3d {
+    transform-style: preserve-3d;
+  }
+  .backface-hidden {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+}
+
+@keyframes floatAnim {
+  0%, 100% { transform: translateY(0) scale(0.8); opacity: 0.3; }
+  50% { transform: translateY(-30px) scale(1.2); opacity: 0.9; }
+}
+
+@keyframes meteorAnim {
+  0% {
+    transform: rotate(215deg) translateX(0);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(215deg) translateX(-600px);
+    opacity: 0;
+  }
+}
+
+.animate-float {
+  animation: floatAnim 6s infinite ease-in-out;
+}
+
+.animate-meteor {
+  animation: meteorAnim 4s linear infinite;
+}
+
+/* Custom scrollbar for letter modal */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(58, 45, 76, 0.6);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb {
+  background: #9a6f92;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ea8571;
+}
